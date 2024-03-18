@@ -1,0 +1,33 @@
+<div>
+  <app-navbar>
+    <dx-data-grid id="gridContainer" [dataSource]="dataSource" [showBorders]="true" [remoteOperations]="true">
+      <dxi-column dataField="OrderNumber" dataType="number"> </dxi-column>
+      <dxi-column dataField="OrderDate" dataType="date"> </dxi-column>
+      <dxi-column dataField="StoreCity" dataType="string"> </dxi-column>
+      <dxi-column dataField="StoreState" dataType="string"> </dxi-column>
+      <dxi-column dataField="Employee" dataType="string"> </dxi-column>
+      <dxi-column dataField="SaleAmount" dataType="number" format="currency">
+      </dxi-column>
+      <dxo-paging [pageSize]="12"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[8, 12, 20]"></dxo-pager>
+    </dx-data-grid>
+    <mat-icon aria-hidden="false" aria-label="icon" fontIcon="start"></mat-icon>
+    <span text #text>2222</span>
+  </app-navbar>
+
+  <div [style]="{display: 'flex', flexDirection: 'column', padding: '1rem'}">
+    <h1 class="mat-headline-5">I am part of the MFE2 layout</h1>
+    <h2 class="mat-headline-6">All components of this MFE are loaded in the dotted section below</h2>
+    <div [style]="{
+        padding: '1rem',
+        borderRadius: '0.25rem',
+        borderWidth: '2px',
+        borderColor: 'rgb(236 72 153)',
+        borderStyle: 'dashed',
+        marginBottom: '0.5rem'
+      }">
+      <router-outlet />
+    </div>
+    <h4 class="mat-subtitle-2">I am part of the MFE2 layout</h4>
+  </div>
+</div>

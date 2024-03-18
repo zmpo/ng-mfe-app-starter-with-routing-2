@@ -1,0 +1,28 @@
+<div [style]="{display: 'flex', flexDirection: 'column', gap: '1rem'}">
+
+  <app-header />
+
+  <div [style]="{display: 'flex', gap: '0.5rem'}">
+    <button mat-raised-button type="button" color="primary" (click)="onFeatureChange('one')">
+      @if (displayedFeature() === 'one') {
+      <mat-icon aria-hidden="false" aria-label="icon" fontIcon="check"></mat-icon>
+      }
+      feat. 1
+    </button>
+    <button mat-raised-button type="button" color="warn" (click)="onFeatureChange('two')">
+      @if (displayedFeature() === 'two') {
+      <mat-icon aria-hidden="false" aria-label="icon" fontIcon="check"></mat-icon>
+      }
+      feat. 2
+    </button>
+  </div>
+
+
+  @if(displayedFeature() === 'one') {
+  <app-feat1 />
+  } @else if (displayedFeature() === 'two') {
+  <app-feat2 />
+  }
+
+  <router-outlet />
+</div>
